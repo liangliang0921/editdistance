@@ -11,11 +11,22 @@ const (
 
 type Row []int
 
+type GetEditDistanceResqData struct {
+	NewString    string `json:"newstring"`
+	OldString    string `json:"oldstring"`
+	EditDistance int    `json:"editdistance"`
+}
+
 // 实现一个求俩个字符串最小编辑距离
 // str1 => str2 插入、删除、替换、交换的最小次数
-func GetEditDistance(str1 string, str2 string) int {
+func GetEditDistance(str1 string, str2 string) *GetEditDistanceResqData {
 	rune1, rune2 := []rune(str1), []rune(str2)
-	return minDistance(rune1, rune2)
+	editDistanceData := GetEditDistanceResqData{
+		NewString:    str1,
+		OldString:    str2,
+		EditDistance: minDistance(rune1, rune2),
+	}
+	return &editDistanceData
 }
 
 // 求对应子串之间的编辑编辑距离
