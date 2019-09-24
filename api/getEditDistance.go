@@ -3,6 +3,7 @@ package api
 import (
 	"../models"
 	"encoding/json"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -21,13 +22,13 @@ type GetEditDistanceResq struct {
 func GetShortestEditDistance(c *gin.Context) {
 	body, err := c.GetRawData()
 	if err != nil {
-		// 错误处理
+		fmt.Printf("GetRawData failed|msg=%v", err)
 		return
 	}
 	req := GetEditDistanceReq{}
 	err = json.Unmarshal(body, &req)
 	if err != nil {
-		// 错误处理
+		fmt.Printf("Unmarshal failed|msg=%v", err)
 		return
 	}
 	editDistanceData := models.GetEditDistance(req.NewString, req.OldString)
