@@ -2,7 +2,7 @@ package models
 
 import (
 	"../utils"
-	"fmt"
+	// "fmt"
 )
 
 const (
@@ -53,7 +53,6 @@ func minDistance(rune1 []rune, rune2 []rune) int {
 			matrix[i][j] = minValue
 		}
 	}
-	// fmt.Println(matrix)
 	return matrix[len1][len2]
 }
 

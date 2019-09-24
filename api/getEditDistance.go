@@ -22,12 +22,14 @@ type GetEditDistanceResq struct {
 func GetShortestEditDistance(c *gin.Context) {
 	body, err := c.GetRawData()
 	if err != nil {
+		HandleError(c, NewError(ErrorGetRawFailed))
 		fmt.Printf("GetRawData failed|msg=%v", err)
 		return
 	}
 	req := GetEditDistanceReq{}
 	err = json.Unmarshal(body, &req)
 	if err != nil {
+		HandleError(c, NewError(ErrorUnmarshFailed))
 		fmt.Printf("Unmarshal failed|msg=%v", err)
 		return
 	}
