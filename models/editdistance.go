@@ -1,8 +1,7 @@
 package models
 
 import (
-	"../utils"
-	// "fmt"
+	"myProject/editdistance/utils"
 )
 
 const (

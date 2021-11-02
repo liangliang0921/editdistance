@@ -1,9 +1,8 @@
 package main
 
 import (
-	"./api"
 	"github.com/gin-gonic/gin"
-	//	"net/http"
+	"myProject/editdistance/api"
 )
 
 // 根据请求处理函数，所有请求相关方都在context中，输出响应hello word

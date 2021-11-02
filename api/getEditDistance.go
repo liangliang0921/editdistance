@@ -1,10 +1,10 @@
 package api
 
 import (
-	"../models"
 	"encoding/json"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"myProject/editdistance/models"
 	"net/http"
 )
 

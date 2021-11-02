@@ -1,8 +1,8 @@
 package api
 
 import (
-	"../models"
 	"github.com/gin-gonic/gin"
+	"myProject/editdistance/models"
 	"net/http"
 )
 

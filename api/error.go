@@ -1,7 +1,5 @@
 package api
 
-import ()
-
 const (
 	ErrorUnmarshFailed = 1001
 	ErrorGetRawFailed  = 1002
